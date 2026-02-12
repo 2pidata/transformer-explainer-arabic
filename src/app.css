@@ -1,0 +1,539 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   app.css - Styles globaux pour Transformer Explainer Arabe
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  /* Reset et base RTL */
+  html {
+    direction: rtl;
+    text-align: right;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 font-arabic antialiased;
+    @apply dark:bg-gray-900 dark:text-gray-100;
+    font-feature-settings: "ss01", "ss02", "cv01";
+    line-height: 1.8;
+  }
+
+  /* Titres */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+    font-family: 'Noto Kufi Arabic', 'Noto Sans Arabic', sans-serif;
+  }
+
+  h1 { @apply text-3xl md:text-4xl; }
+  h2 { @apply text-2xl md:text-3xl; }
+  h3 { @apply text-xl md:text-2xl; }
+  h4 { @apply text-lg md:text-xl; }
+
+  /* Paragraphes */
+  p {
+    @apply leading-relaxed mb-4;
+  }
+
+  /* Liens */
+  a {
+    @apply text-primary-600 hover:text-primary-800 transition-colors;
+    @apply dark:text-primary-400 dark:hover:text-primary-300;
+  }
+
+  /* Code */
+  code {
+    @apply font-mono text-sm bg-gray-100 px-1.5 py-0.5 rounded;
+    @apply dark:bg-gray-800;
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  pre {
+    @apply font-mono text-sm bg-gray-100 p-4 rounded-lg overflow-x-auto;
+    @apply dark:bg-gray-800;
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* Sélection */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+    @apply dark:bg-primary-800 dark:text-primary-100;
+  }
+
+  /* Scrollbar personnalisé */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+    @apply dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+    @apply dark:bg-gray-600;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+    @apply dark:bg-gray-500;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPOSANTS RÉUTILISABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer components {
+  /* ─────────────────────────────────────────────────────────────────────────
+     Boutons
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium;
+    @apply transition-all duration-200 ease-in-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white;
+    @apply hover:bg-primary-700 active:bg-primary-800;
+    @apply focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-800;
+    @apply hover:bg-gray-300 active:bg-gray-400;
+    @apply focus:ring-gray-400;
+    @apply dark:bg-gray-700 dark:text-gray-200;
+    @apply dark:hover:bg-gray-600;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-600 text-primary-600 bg-transparent;
+    @apply hover:bg-primary-50 active:bg-primary-100;
+    @apply focus:ring-primary-500;
+    @apply dark:border-primary-400 dark:text-primary-400;
+    @apply dark:hover:bg-primary-900/20;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Cartes
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .card {
+    @apply bg-white rounded-xl shadow-soft p-6;
+    @apply dark:bg-gray-800;
+  }
+
+  .card-bordered {
+    @apply card border border-gray-200;
+    @apply dark:border-gray-700;
+  }
+
+  .card-hover {
+    @apply card transition-transform duration-200;
+    @apply hover:scale-[1.02] hover:shadow-lg;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Inputs
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300;
+    @apply bg-white text-gray-900;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-all duration-200;
+    @apply dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100;
+  }
+
+  .input-arabic {
+    @apply input text-right font-arabic text-lg;
+    direction: rtl;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Tokens
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .token {
+    @apply inline-flex items-center px-2 py-1 rounded-md;
+    @apply bg-token-bg border border-token-border;
+    @apply text-sm font-medium;
+    @apply transition-all duration-150;
+    @apply cursor-pointer select-none;
+  }
+
+  .token:hover {
+    @apply bg-token-hover border-token-selected;
+    @apply shadow-sm;
+  }
+
+  .token-selected {
+    @apply token bg-token-selected text-white border-token-selected;
+  }
+
+  .token-highlighted {
+    @apply token ring-2 ring-primary-400 ring-offset-1;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Matrices d'attention
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .attention-matrix {
+    @apply relative overflow-hidden rounded-lg;
+  }
+
+  .attention-cell {
+    @apply transition-opacity duration-150;
+  }
+
+  .attention-cell:hover {
+    @apply opacity-80;
+  }
+
+  .attention-label {
+    @apply text-xs font-medium text-gray-600;
+    @apply dark:text-gray-400;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Barres de probabilité
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .probability-bar {
+    @apply h-6 rounded-md transition-all duration-300;
+    @apply bg-gradient-to-l from-primary-500 to-primary-600;
+  }
+
+  .probability-bar-high {
+    @apply from-green-500 to-green-600;
+  }
+
+  .probability-bar-medium {
+    @apply from-yellow-500 to-yellow-600;
+  }
+
+  .probability-bar-low {
+    @apply from-red-500 to-red-600;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Sliders
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .slider {
+    @apply w-full h-2 rounded-full appearance-none cursor-pointer;
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
+
+  .slider::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 rounded-full;
+    @apply bg-primary-600 cursor-pointer;
+    @apply shadow-md transition-transform duration-150;
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    @apply scale-110;
+  }
+
+  .slider::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full border-0;
+    @apply bg-primary-600 cursor-pointer;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Tooltips
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .tooltip {
+    @apply absolute z-tooltip px-3 py-2 rounded-lg;
+    @apply bg-gray-900 text-white text-sm;
+    @apply shadow-lg pointer-events-none;
+    @apply opacity-0 transition-opacity duration-150;
+    @apply dark:bg-gray-100 dark:text-gray-900;
+  }
+
+  .tooltip-visible {
+    @apply opacity-100;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Loading
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full border-4;
+    @apply border-gray-200 border-t-primary-600;
+  }
+
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+    @apply dark:bg-gray-700;
+  }
+
+  .loading-overlay {
+    @apply fixed inset-0 z-loading;
+    @apply bg-white/80 backdrop-blur-sm;
+    @apply flex items-center justify-center;
+    @apply dark:bg-gray-900/80;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Sections de l'article
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .article-section {
+    @apply mb-12 scroll-mt-20;
+  }
+
+  .article-section h2 {
+    @apply text-2xl font-bold mb-4 text-primary-800;
+    @apply dark:text-primary-300;
+  }
+
+  .article-section h3 {
+    @apply text-xl font-semibold mb-3 text-gray-800;
+    @apply dark:text-gray-200;
+  }
+
+  .article-content {
+    @apply prose prose-lg max-w-none;
+    @apply dark:prose-invert;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Navigation des couches
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  .layer-nav {
+    @apply flex items-center gap-2;
+  }
+
+  .layer-nav-btn {
+    @apply p-2 rounded-lg bg-gray-100 hover:bg-gray-200;
+    @apply transition-colors duration-150;
+    @apply disabled:opacity-30 disabled:cursor-not-allowed;
+    @apply dark:bg-gray-700 dark:hover:bg-gray-600;
+  }
+
+  .layer-indicator {
+    @apply px-3 py-1 rounded-full bg-primary-100 text-primary-800;
+    @apply text-sm font-medium;
+    @apply dark:bg-primary-900 dark:text-primary-200;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITAIRES PERSONNALISÉS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Direction du texte */
+  .dir-rtl {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .dir-ltr {
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* Pour le code et les nombres dans un contexte RTL */
+  .isolate-ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  /* Gradient de texte */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 to-primary-400;
+  }
+
+  /* Ombre pour les cartes flottantes */
+  .shadow-float {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animation de pulse pour les éléments interactifs */
+  .interactive-pulse {
+    @apply relative;
+  }
+
+  .interactive-pulse::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg;
+    @apply animate-ping bg-primary-400 opacity-25;
+    pointer-events: none;
+  }
+
+  /* Scrollbar cachée mais fonctionnelle */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg;
+    @apply dark:bg-gray-800/70;
+  }
+
+  /* Bordure subtile */
+  .border-subtle {
+    @apply border border-gray-200/50;
+    @apply dark:border-gray-700/50;
+  }
+
+  /* Focus visible uniquement au clavier */
+  .focus-visible-ring {
+    @apply focus:outline-none;
+    @apply focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Attention flow animation */
+@keyframes attentionFlow {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-attention-flow {
+  animation: attentionFlow 1s ease-out forwards;
+}
+
+/* Probability bar fill */
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--fill-width); }
+}
+
+.animate-fill-bar {
+  animation: fillBar 0.5s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .attention-matrix {
+    @apply max-w-full overflow-x-auto;
+  }
+
+  .token {
+    @apply text-xs px-1.5 py-0.5;
+  }
+
+  .card {
+    @apply p-4;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .attention-matrix {
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+
+  .card {
+    @apply shadow-none border border-gray-300;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SUPPORT NAVIGATEUR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Firefox-specific */
+@-moz-document url-prefix() {
+  .slider {
+    height: 8px;
+  }
+}
+
+/* Safari-specific */
+@supports (-webkit-appearance: none) {
+  .input:focus {
+    outline: none;
+  }
+}

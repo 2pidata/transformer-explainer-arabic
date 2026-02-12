@@ -1,0 +1,64 @@
+{
+  "name": "transformer-explainer-arabic",
+  "version": "1.0.0",
+  "description": "شارح المحوّل - Interactive visualization tool to learn how Transformer models work, with Arabic language support",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.0.0",
+    "d3": "^7.9.0",
+    "d3-array": "^3.2.4",
+    "d3-interpolate": "^3.0.1",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.1.0",
+    "onnxruntime-web": "^1.18.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.1",
+    "@sveltejs/kit": "^2.5.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/d3": "^7.4.3",
+    "@types/d3-scale": "^4.0.8",
+    "@types/d3-scale-chromatic": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^8.57.0",
+    "eslint-plugin-svelte": "^2.35.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "prettier-plugin-svelte": "^3.2.0",
+    "svelte": "^4.2.12",
+    "svelte-check": "^3.6.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.0",
+    "vite": "^5.1.0"
+  },
+  "keywords": [
+    "transformer",
+    "gpt",
+    "arabic",
+    "visualization",
+    "machine-learning",
+    "nlp",
+    "education",
+    "interactive"
+  ],
+  "author": "2PiData",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2pidata/transformer-explainer-arabic.git"
+  },
+  "homepage": "https://2pidata.github.io/transformer-explainer-arabic"
+}
