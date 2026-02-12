@@ -243,6 +243,6 @@ MIT License - Voir [LICENSE](LICENSE)
 
 **Fait avec ❤️ pour la communauté tech arabe**
 
-#databelarebia
+[2pidata](https://2pidata.com)
 
 </div>

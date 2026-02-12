@@ -98,11 +98,7 @@
       </div>
 
       <p class="text-gray-500 dark:text-gray-400 text-sm">
-        © {currentYear} شارح المحوّل. مستوحى من
-        <a href="https://poloclub.github.io/transformer-explainer/" target="_blank" rel="noopener" class="text-primary-600 hover:underline">
-          Transformer Explainer
-        </a>
-        من Georgia Tech.
+        © {currentYear} شارح المحوّل — أداة تعليمية تفاعلية مفتوحة المصدر
       </p>
 
       <!-- Made with love by Miloud -->
