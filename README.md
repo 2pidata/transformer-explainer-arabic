@@ -203,6 +203,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-Made with ❤️ par **Miloud Belarebia** | [2PiData](https://2pidata.com) | [contact@2pidata.fr](mailto:contact@2pidata.fr)
+Made with ❤️ by **Miloud Belarebia** | [2PiData](https://2pidata.com) | [contact@2pidata.fr](mailto:contact@2pidata.fr)
 
 </div>
