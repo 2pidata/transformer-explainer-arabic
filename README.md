@@ -203,8 +203,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**#databelarebia** 🇩🇿
-
-Made with ❤️ for the Arabic-speaking tech community
+Made with ❤️ par **Miloud Belarebia** | [2PiData](https://2pidata.com) | [contact@2pidata.fr](mailto:contact@2pidata.fr)
 
 </div>
