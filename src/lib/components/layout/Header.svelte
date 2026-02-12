@@ -56,7 +56,7 @@
         
         <!-- Lien GitHub -->
         <a
-          href="https://github.com/yourusername/transformer-explainer-arabic"
+          href="https://github.com/2pidata/transformer-explainer-arabic"
           target="_blank"
           rel="noopener"
           class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
